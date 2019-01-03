@@ -1,0 +1,24 @@
+package examplesofinterfaces;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
+import javax.swing.*;
+import javax.swing.Timer;
+
+class main {
+    public static void main(String[] args) {
+        ActionListener listener = new TimePrinter();
+        Timer t = new Timer(10000, listener);
+        t.start();
+    }
+}
+
+public class TimePrinter implements ActionListener
+{
+    public void actionPerformed(ActionEvent event)
+    {
+        System.out.println("At the tone, the time is " + new Date());
+        Toolkit.getDefaultToolkit().beep();
+    }
+}
